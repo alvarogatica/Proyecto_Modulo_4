@@ -22,3 +22,6 @@ Un nuevo emprendimiento de moteles esta surgiendo pero no tienen como gestionar 
 | Eliminar una reserva por ID| DEL | {{URL_BASE}}/reserva/eliminar |
 | Edita una reserva por ID | PUT | {{URL_BASE}}/reserva/editar |
 | Revisa disponibilidad de habitacion | GET | {{URL_BASE}}/reserva/disponibilidad |
+
+## Usar Proyecto
+* Clona este repositorio de github: 
