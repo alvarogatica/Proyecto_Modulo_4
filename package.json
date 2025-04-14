@@ -22,7 +22,8 @@
   "homepage": "https://github.com/alvarogatica/Proyecto_Modulo_4#readme",
   "dependencies": {
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "moment": "^2.30.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

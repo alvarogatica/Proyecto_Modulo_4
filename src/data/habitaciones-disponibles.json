@@ -1,11 +1,14 @@
 {
     "habitacion_basica": {
-        "precio": 1000 
+        "precio": 1000,
+        "duracion": 180
     },
     "habitacion_media": {
-        "precio": 1500 
+        "precio": 1500,
+        "duracion": 240
     },
     "habitacion_lujo": {
-        "precio": 2000 
+        "precio": 2000,
+        "duracion": 300
     }
 }
