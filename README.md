@@ -10,14 +10,15 @@ Un nuevo emprendimiento de moteles esta surgiendo pero no tienen como gestionar 
 * Utilizar Node.js
 * Utilizar Express
 * Implementar Endpoints que permitan el manejo de la API
+
 | Descripcion | Metodo | Endpoint |
+|---|---|---|
 | Obtener informacion sobre si el servidor esta corriendo | GET | {{URL_BASE}}/ |
-| Obtener informacion sobre si el servidor esta corriendo | GET | {{URL_BASE}}/ |
-| Obtener informacion sobre si el servidor esta corriendo | GET | {{URL_BASE}}/ |
-| Obtener informacion sobre si el servidor esta corriendo | GET | {{URL_BASE}}/ |
-| Obtener informacion sobre si el servidor esta corriendo | GET | {{URL_BASE}}/ |
-| Obtener informacion sobre si el servidor esta corriendo | GET | {{URL_BASE}}/ |
-| Obtener informacion sobre si el servidor esta corriendo | GET | {{URL_BASE}}/ |
-| Obtener informacion sobre si el servidor esta corriendo | GET | {{URL_BASE}}/ |
-| Obtener informacion sobre si el servidor esta corriendo | GET | {{URL_BASE}}/ |
-| Obtener informacion sobre si el servidor esta corriendo | GET | {{URL_BASE}}/ |
+| Crear reserva | POST | {{URL_BASE}}/reserva |
+| Obtener listado de reservas | GET | {{URL_BASE}}/reserva |
+| Consultar con filtros especificos QUERY | GET | {{URL_BASE}}/query? |
+| Consulta por metodos de pago por ID | PATCH | {{URL_BASE}}/reserva/pagar |
+| Cancelar una reserva por ID | PATCH | {{URL_BASE}}/reserva/cancelar |
+| Eliminar una reserva por ID| DEL | {{URL_BASE}}/reserva/eliminar |
+| Edita una reserva por ID | PUT | {{URL_BASE}}/reserva/editar |
+| Revisa disponibilidad de habitacion | GET | {{URL_BASE}}/reserva/disponibilidad |
