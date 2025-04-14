@@ -28,7 +28,7 @@ const crearReserva = (req, res) => {
     //const fechaHoraFinReserva = fechaReserva.clone().add(duracionReserva, 'minutes');
     const reservasHabitacionSolicitada = reservas
         .filter(reserva => reserva.tipo_habitacion === tipo_habitacion)
-        .filter(reserva => moment.utc(reserva.fecha_hora).isSame(fechaReserva, 'minute'));
+        .filter(reserva => moment(reserva.fecha_hora, moment.ISO_8601).isSame(fechaReserva, 'minute'));
 
     if (reservasHabitacionSolicitada.length > 0) {
         return res.status(400).send('La habitación solicitada no está disponible en la fecha y hora solicitadas');
@@ -54,7 +54,25 @@ const obtenerTodasLasReservas = (req, res) => {
     res.status(200).json(reservas);
 }
 
+const obtenerReservasPorQuery= (req, res) => {
+    const {fecha, cliente, estado} = req.query;
+    let reservasFiltradas = reservas;
+    if (fecha) {
+        const fechaConsulta = moment(fecha, 'DD/MM/YYYY');
+        reservasFiltradas = reservasFiltradas.filter(reserva => moment(reserva.fecha_hora, moment.ISO_8601).isSame(fechaConsulta, 'day'));
+    }
+    if (cliente) {
+        reservasFiltradas = reservasFiltradas.filter(reserva => reserva.cliente === cliente);
+    }
+    if (estado) {
+        reservasFiltradas = reservasFiltradas.filter(reserva => reserva.estado === estado);
+    }
+    return res.status(200).json(reservasFiltradas);
+}
+    
+
 module.exports = {
     crearReserva,
     obtenerTodasLasReservas,
+    obtenerReservasPorQuery,
 }
