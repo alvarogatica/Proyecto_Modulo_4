@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const rutaDatas = path.join(__dirname, '../data/habitaciones-disponibles.json');
 const moment = require('moment');
+const { v4: uuidv4 } = require('uuid');
 
 const habitacionesDisponibles = JSON.parse(fs.readFileSync(rutaDatas, 'utf-8'));
 
@@ -9,9 +10,7 @@ const reservas = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/reserv
 
 // obtenemos los datos de la reserva del cuerpo de la solicitud
 const crearReserva = (req, res) => {
-    // const habitacion = req.body.tipo_habitacion;
-    // const fecha = req.body.fecha;
-    // const cliente = req.body.idCliente;
+    
     const { tipo_habitacion, fecha, hora, idCliente: cliente } = req.body;
 // validamos que los datos de la reserva sean correctos
     if (!tipo_habitacion || !fecha || !hora || !cliente) {
@@ -33,9 +32,22 @@ const crearReserva = (req, res) => {
 
     if (reservasHabitacionSolicitada.length > 0) {
         return res.status(400).send('La habitación solicitada no está disponible en la fecha y hora solicitadas');
+    };
+
+    const reserva = {
+        id: uuidv4(),
+        tipo_habitacion: tipo_habitacion,
+        fecha_hora: fechaReserva.format('DD/MM/YYYY HH:mm'),
+        cliente: cliente,
+        estado: 'confirmada',
+        precio: habitacionesDisponibles[tipo_habitacion].precio,
     }
 
-    res.send(`Reserva recibida para ${tipo_habitacion}`);
+    // guardamos la reserva en el archivo de reservas.json
+    reservas.push(reserva);
+    fs.writeFileSync(path.join(__dirname, '../data/reservas.json'), JSON.stringify(reservas, null, 2), 'utf-8');
+
+    res.status(201).send(`Reserva recibida para ${tipo_habitacion}`);
 }
 
 module.exports = {

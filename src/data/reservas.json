@@ -1,11 +1,43 @@
 [
-    {
-        "id": 1,
-        "tipo_habitacion": "habitacion_lujo",
-        "cliente": "12312",
-        "fecha_hora": "2025-04-14T19:00:00-04:00",
-        "duracion": 300,
-        "precio": 2000,
-        "estado": "pagada"
-    }
+  {
+    "id": 1,
+    "tipo_habitacion": "habitacion_lujo",
+    "cliente": "12312",
+    "fecha_hora": "2025-04-14T19:00:00-04:00",
+    "duracion": 300,
+    "precio": 2000,
+    "estado": "pagada"
+  },
+  {
+    "id": "33b71e4c-1b39-43bf-b97a-4009ab7cc006",
+    "tipo_habitacion": "habitacion_lujo",
+    "fecha_hora": "14/04/2025 21:00",
+    "cliente": "12312",
+    "estado": "confirmada",
+    "precio": 2000
+  },
+  {
+    "id": "898dc950-1bf5-4215-91d7-7c659d3fb0ef",
+    "tipo_habitacion": "habitacion_lujo",
+    "fecha_hora": "14/04/2025 21:00",
+    "cliente": "12312",
+    "estado": "confirmada",
+    "precio": 2000
+  },
+  {
+    "id": "48f214c1-194f-4388-a835-0600a2c0091e",
+    "tipo_habitacion": "habitacion_lujo",
+    "fecha_hora": "14/04/2025 22:00",
+    "cliente": "12312",
+    "estado": "confirmada",
+    "precio": 2000
+  },
+  {
+    "id": "dcb03f15-161d-4204-9320-42850121b35d",
+    "tipo_habitacion": "habitacion_basica",
+    "fecha_hora": "14/04/2025 22:00",
+    "cliente": "12312",
+    "estado": "confirmada",
+    "precio": 1000
+  }
 ]
