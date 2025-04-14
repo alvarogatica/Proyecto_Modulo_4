@@ -24,4 +24,32 @@ Un nuevo emprendimiento de moteles esta surgiendo pero no tienen como gestionar 
 | Revisa disponibilidad de habitacion | GET | {{URL_BASE}}/reserva/disponibilidad |
 
 ## Usar Proyecto
-* Clona este repositorio de github: 
+* Clona este repositorio de github: https://github.com/alvarogatica/Proyecto_Modulo_4.git
+* Situate en la carpeta "Proyecto_Modulo_4
+* Instala las dependencias desde la consola, situado ya en la carpeta principal del proyecto, con el comando  ``npm install``
+* Asegurate de tener un archivo .env con las variables de entorno. En este caso es la siguiente ``PORT = 3000``
+* Levanta el proyecto con el comando ``npm run dev``
+
+## Detalles de Implementacion
+* Definimos arquitectura de carpetas
+  * Proyecto_Modulo_4
+      * node_modules
+      * src
+          * controllers
+              * healtcheck.controller.js
+              * reservas.controller.js
+          * data
+              * fecha-hora.json
+              * habitaciones-disponibles.json
+              * medios-de-pago.js
+              * reservas.json
+          * models
+          * routes
+              * reservas.route.js
+          * index.js
+    * .env
+    * .gitignore
+    * package-lock.json
+    * package.json
+    * README.md
+      
