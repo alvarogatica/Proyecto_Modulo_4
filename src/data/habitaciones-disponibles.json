@@ -1,0 +1,11 @@
+{
+    "habitacion_basica": {
+        "precio": 1000 
+    },
+    "habitacion_media": {
+        "precio": 1500 
+    },
+    "habitacion_lujo": {
+        "precio": 2000 
+    }
+}
