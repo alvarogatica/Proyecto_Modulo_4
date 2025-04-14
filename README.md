@@ -16,6 +16,7 @@ Un nuevo emprendimiento de moteles esta surgiendo pero no tienen como gestionar 
 * Utilizar Express
 * Implementar Endpoints que permitan el manejo de la API
 * json (como database)
+* implementar persistencia de datos (data base local)
 
 (Cabe destacar que el proyecto en cuestion es distinto al ejemplo del proyecto sobre reservas de hotel, este proyecto es un poco mas pequeño por lo cual no requerimos de tantos endpoint, siempre y cuando mantengamos la logica en los CRUD)
 
