@@ -138,7 +138,7 @@ reservasRouter.get('/disponibilidad/', revisarDisponibilidad);
 
 module.exports = reservasRouter;
 ```
-* uso de controlador con ``reservas.controller.js``
+* uso de controlador con ``reservas.controller.js`` utilizando control de errores ``Try{}Catch{}``
 ```js
 const fs = require("fs");
 const path = require("path");
