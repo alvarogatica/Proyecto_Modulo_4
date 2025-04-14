@@ -3,7 +3,7 @@
     "id": 1,
     "tipo_habitacion": "habitacion_lujo",
     "cliente": "12312",
-    "fecha_hora": "2025-04-14T19:00:00-04:00",
+    "fecha_hora": "14/04/2025 22:00",
     "duracion": 300,
     "precio": 2000,
     "estado": "pagada"
@@ -36,6 +36,62 @@
     "id": "dcb03f15-161d-4204-9320-42850121b35d",
     "tipo_habitacion": "habitacion_basica",
     "fecha_hora": "14/04/2025 22:00",
+    "cliente": "12312",
+    "estado": "confirmada",
+    "precio": 1000
+  },
+  {
+    "id": "6de937e1-174a-448e-a336-49cb0bc2f72c",
+    "tipo_habitacion": "habitacion_basica",
+    "fecha_hora": "14/04/2025 22:00",
+    "cliente": "12312",
+    "estado": "confirmada",
+    "precio": 1000
+  },
+  {
+    "id": "d36f7840-f3da-44a5-8fa5-04c69588cd9c",
+    "tipo_habitacion": "habitacion_basica",
+    "fecha_hora": "14/04/2025 22:00",
+    "cliente": "12312",
+    "estado": "confirmada",
+    "precio": 1000
+  },
+  {
+    "id": "df788b0e-33d6-4bec-908c-11eb789a3638",
+    "tipo_habitacion": "habitacion_basica",
+    "fecha_hora": "14/04/2025 22:00",
+    "cliente": "12312",
+    "estado": "confirmada",
+    "precio": 1000
+  },
+  {
+    "id": "63b7799e-2436-4cb8-ab5a-d559527f7d52",
+    "tipo_habitacion": "habitacion_basica",
+    "fecha_hora": "14/04/2025 20:00",
+    "cliente": "12312",
+    "estado": "confirmada",
+    "precio": 1000
+  },
+  {
+    "id": "df86f916-5800-4d03-8a30-566c8102b1ba",
+    "tipo_habitacion": "habitacion_basica",
+    "fecha_hora": "14/04/2025 21:00",
+    "cliente": "12312",
+    "estado": "confirmada",
+    "precio": 1000
+  },
+  {
+    "id": "ec9b7e1d-08c0-4152-a5e6-303207e06325",
+    "tipo_habitacion": "habitacion_basica",
+    "fecha_hora": "2025-04-14 21:00:00",
+    "cliente": "12312",
+    "estado": "confirmada",
+    "precio": 1000
+  },
+  {
+    "id": "ae8f6035-1be7-44a2-bc47-61c54f38e038",
+    "tipo_habitacion": "habitacion_basica",
+    "fecha_hora": "2025-04-15T01:00:00.000Z",
     "cliente": "12312",
     "estado": "confirmada",
     "precio": 1000

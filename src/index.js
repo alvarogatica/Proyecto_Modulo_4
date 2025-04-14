@@ -1,6 +1,7 @@
 const express = require('express');
 const { healthcheck } = require('./controllers/healthcheck.controller');
-const { crearReserva } = require('./controllers/reservas.controller');
+const { crearReserva, obtenerTodasLasReservas } = require('./controllers/reservas.controller');
+const reservasRouter = require('./routes/reservas.routes');
 require ('dotenv').config();
 
 const app = express();
@@ -8,7 +9,8 @@ app.use(express.json());
 
 app.get('/', healthcheck);
 
-app.post('/reserva', crearReserva)
+app.use('/reserva', reservasRouter);
+
 
 const port = process.env.PORT || 3000;
 

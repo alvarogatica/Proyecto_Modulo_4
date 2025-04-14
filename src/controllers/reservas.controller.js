@@ -10,7 +10,7 @@ const reservas = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/reserv
 
 // obtenemos los datos de la reserva del cuerpo de la solicitud
 const crearReserva = (req, res) => {
-    
+
     const { tipo_habitacion, fecha, hora, idCliente: cliente } = req.body;
 // validamos que los datos de la reserva sean correctos
     if (!tipo_habitacion || !fecha || !hora || !cliente) {
@@ -28,7 +28,7 @@ const crearReserva = (req, res) => {
     //const fechaHoraFinReserva = fechaReserva.clone().add(duracionReserva, 'minutes');
     const reservasHabitacionSolicitada = reservas
         .filter(reserva => reserva.tipo_habitacion === tipo_habitacion)
-        .filter(reserva => moment(reserva.fecha_hora).isSame(fechaReserva));
+        .filter(reserva => moment.utc(reserva.fecha_hora).isSame(fechaReserva, 'minute'));
 
     if (reservasHabitacionSolicitada.length > 0) {
         return res.status(400).send('La habitación solicitada no está disponible en la fecha y hora solicitadas');
@@ -37,7 +37,7 @@ const crearReserva = (req, res) => {
     const reserva = {
         id: uuidv4(),
         tipo_habitacion: tipo_habitacion,
-        fecha_hora: fechaReserva.format('DD/MM/YYYY HH:mm'),
+        fecha_hora: fechaReserva.toISOString(),
         cliente: cliente,
         estado: 'confirmada',
         precio: habitacionesDisponibles[tipo_habitacion].precio,
@@ -50,6 +50,11 @@ const crearReserva = (req, res) => {
     res.status(201).send(`Reserva recibida para ${tipo_habitacion}`);
 }
 
+const obtenerTodasLasReservas = (req, res) => {
+    res.status(200).json(reservas);
+}
+
 module.exports = {
-    crearReserva
+    crearReserva,
+    obtenerTodasLasReservas,
 }
