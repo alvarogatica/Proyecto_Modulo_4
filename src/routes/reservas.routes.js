@@ -1,6 +1,6 @@
 const express = require('express');
 const { Router } = require('express');
-const { crearReserva, obtenerTodasLasReservas, obtenerReservasPorQuery, pagarReserva, cancelarReserva, eliminarReserva, editarReserva } = require('../controllers/reservas.controller');
+const { crearReserva, obtenerTodasLasReservas, obtenerReservasPorQuery, pagarReserva, cancelarReserva, eliminarReserva, editarReserva, revisarDisponibilidad} = require('../controllers/reservas.controller');
 const reservasRouter = express.Router();
 
 reservasRouter.get('/', obtenerTodasLasReservas);
@@ -10,6 +10,7 @@ reservasRouter.patch('/pagar/:id', pagarReserva);
 reservasRouter.patch('/cancelar/:id', cancelarReserva);
 reservasRouter.delete('/eliminar/:id', eliminarReserva);
 reservasRouter.put('/editar/:id', editarReserva);
+reservasRouter.get('/disponibilidad/', revisarDisponibilidad);
 
 
 module.exports = reservasRouter;

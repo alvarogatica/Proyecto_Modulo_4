@@ -162,6 +162,29 @@ const editarReserva = (req, res) => {
     res.status(200).send('Reserva editada con éxito');
 }
 
+//metodo para revisar disponibilidad de una habitacion
+const revisarDisponibilidad = (req, res) => {
+    const {tipo_habitacion, fecha, hora} = req.body;
+    if (!tipo_habitacion || !fecha || !hora) {
+        return res.status(400).send('Faltan datos para la consulta de disponibilidad');
+    }
+    const habitacionExiste = Object.keys(habitacionesDisponibles).includes(tipo_habitacion);
+    if (!habitacionExiste) {
+        return res.status(400).send('La habitación solicitada no existe');
+    }
+    const fechaReserva = moment(`${fecha} ${hora}`, 'DD/MM/YYYY HH:mm');
+    const reservasHabitacionSolicitada = reservas
+        .filter(reserva => reserva.tipo_habitacion === tipo_habitacion)
+        .filter(reserva => moment(reserva.fecha_hora, moment.ISO_8601).isSame(fechaReserva, 'minute'));
+
+    if (reservasHabitacionSolicitada.length > 0) {
+        return res.status(400).send('La habitación solicitada no está disponible en la fecha y hora solicitadas');
+    };
+
+    res.status(200).send('La habitación está disponible en la fecha y hora solicitadas');
+}
+
+
 const guardarEnLaBaseDeDatos = () => {
     fs.writeFileSync(path.join(__dirname, '../data/reservas.json'), JSON.stringify(reservas, null, 2), 'utf-8');
 }
@@ -175,4 +198,5 @@ module.exports = {
     cancelarReserva,
     eliminarReserva,
     editarReserva,
+    revisarDisponibilidad,
 }

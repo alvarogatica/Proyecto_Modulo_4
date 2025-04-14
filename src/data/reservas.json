@@ -143,5 +143,13 @@
     "cliente": "2020",
     "estado": "confirmada",
     "precio": 2000
+  },
+  {
+    "id": "5abd1dd3-e501-4b60-b7ef-8421cec8205b",
+    "tipo_habitacion": "habitacion_lujo",
+    "fecha_hora": "2025-04-19T22:00:00.000Z",
+    "cliente": "2025",
+    "estado": "confirmada",
+    "precio": 2000
   }
 ]
