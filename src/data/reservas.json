@@ -135,5 +135,13 @@
     "cliente": "91234",
     "estado": "confirmada",
     "precio": 2000
+  },
+  {
+    "id": "c4dcc9f0-f492-4fa6-af64-b4d3f8e0f515",
+    "tipo_habitacion": "habitacion_basica",
+    "fecha_hora": "2025-04-20T21:00:00.000Z",
+    "cliente": "2020",
+    "estado": "confirmada",
+    "precio": 2000
   }
 ]

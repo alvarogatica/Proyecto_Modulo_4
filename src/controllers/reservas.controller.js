@@ -138,6 +138,30 @@ const eliminarReserva = (req, res) => {
     res.status(200).send('Reserva eliminada con éxito');
 }
 
+//metodo para editar una reserva
+const editarReserva = (req, res) => {
+    const idReserva = req.params.id;
+    const reserva = reservas.find(reserva => reserva.id === idReserva);
+    if (!reserva) {
+        return res.status(404).send('Reserva no encontrada');
+    }
+    // actualizar la reserva con los nuevos datos
+    const {tipo_habitacion, fecha, hora, cliente} = req.body;
+    if (tipo_habitacion) {
+        reserva.tipo_habitacion = tipo_habitacion;
+    }
+    if (fecha) {
+        reserva.fecha_hora = moment(`${fecha} ${hora}`, 'DD/MM/YYYY HH:mm').toISOString();
+    }
+    if (cliente) {
+        reserva.cliente = cliente;
+    }
+    
+    guardarEnLaBaseDeDatos();
+    
+    res.status(200).send('Reserva editada con éxito');
+}
+
 const guardarEnLaBaseDeDatos = () => {
     fs.writeFileSync(path.join(__dirname, '../data/reservas.json'), JSON.stringify(reservas, null, 2), 'utf-8');
 }
@@ -150,4 +174,5 @@ module.exports = {
     pagarReserva,
     cancelarReserva,
     eliminarReserva,
+    editarReserva,
 }
